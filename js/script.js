@@ -178,14 +178,16 @@ actBtns.forEach(btn =>{
     btn.onclick = () => {
         actBtns.forEach(el => el.classList.remove('calculating__choose-item_active'))
         btn.classList.add('calculating__choose-item_active')
-        let coefficient = btn.getAttribute('data-act')
+        let coefficient = +btn.getAttribute('data-act')
         
         if(userData.gender === 'woman'){
-            let result = 655.1 + (9.563 * userData.weight) + (1.85 * userData.height) - (4.676 * userData.age)
+            let result = 447.6 + (9.2 * userData.weight) + (3.1 * userData.height) - (4.3 * userData.age)
             result_viev.innerHTML = Math.floor(result * coefficient)
         }else{
-            let result =  66.5 + (13.75 * userData.weight) + (5.003 * userData.height) - (6,775 * userData.age)
+            let result =  66.5 + (13.75 * userData.weight) + (5.003 * userData.height) - (6.775 * userData.age)
             result_viev.innerHTML = Math.floor(result * coefficient)
         }
+        console.log(userData);
     }
 })
+
